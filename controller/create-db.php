@@ -13,17 +13,26 @@
         $query = $connection->query("CREATE DATABASE $database");
         
         if($query){
-            echo "Successfully Created Database: . $database";
+            echo "<p>Successfully Created Database: . $database". "</p>";
         }
     }
     else {
-        echo "Database already exist";
+        echo "<p>Database already exist.</p>";
     }
     
     
     $query = $connection->query("CREATE TABLE posts (" 
             . "id int(11) NOT NULL AUTO-INCREMENT,"
-            . "title varchat(255)");
+            . "title varchat(255)"
+            . "post text NOT NULL"
+            . "PRIMARY KEY (id))");
     
+    if($query) {
+        echo "<p>Successfully created table: posts </p>";
+    }
+    else{
+        echo "<p>$connection->error</p>"
+    }
+             
         
     $connection->close();
