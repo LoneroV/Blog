@@ -22,16 +22,16 @@
     
     
     $query = $connection->query("CREATE TABLE posts (" 
-            . "id int(11) NOT NULL AUTO-INCREMENT,"
-            . "title varchat(255)"
-            . "post text NOT NULL"
+            . "id int(11) NOT NULL AUTO_INCREMENT,"
+            . "title varchar(255),"
+            . "post text NOT NULL,"
             . "PRIMARY KEY (id))");
     
     if($query) {
         echo "<p>Successfully created table: posts </p>";
     }
     else{
-        echo "<p>$connection->error</p>"
+        echo "<p>$connection->error</p>";
     }
              
         
