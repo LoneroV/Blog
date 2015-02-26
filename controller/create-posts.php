@@ -10,8 +10,11 @@
 
     if($query){
         echo "<p>Successfully inserted post: $title</p>";
+        //allows us to see the  link in the nav bar
+        ?><a href="<?php echo $path . "index.php"?>">Create a Post</a><?php
     }
     else
         {
+        //tells you that you have an error
         echo "<p>$connection->error</p>";
 }
